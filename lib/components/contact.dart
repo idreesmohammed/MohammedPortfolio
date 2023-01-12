@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shimmer/shimmer.dart';
 import '../utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -20,10 +21,16 @@ class _ContactState extends State<Contact> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "Get In Touch",
-          style: GoogleFonts.robotoMono(
-              color: Colors.white, fontSize: 25.0, fontWeight: FontWeight.w600),
+        Shimmer.fromColors(
+          baseColor: Colors.white,
+          highlightColor: const Color(0xff309543),
+          child: Text(
+            "Get In Touch",
+            style: GoogleFonts.robotoMono(
+                color: Colors.white,
+                fontSize: 25.0,
+                fontWeight: FontWeight.w600),
+          ),
         ),
         const SizedBox(
           height: 15.0,
@@ -35,7 +42,7 @@ class _ContactState extends State<Contact> {
           child: Wrap(
             children: [
               const SizedBox(
-                width: 25.0,
+                width: 30.0,
               ),
               InkWell(
                 onHover: (val) {
@@ -57,11 +64,11 @@ class _ContactState extends State<Contact> {
                   color: onHoverLinkedIn == true
                       ? const Color(0xff309543)
                       : Colors.white,
-                  size: 50.0,
+                  size: 40.0,
                 ),
               ),
               const SizedBox(
-                width: 25.0,
+                width: 30.0,
               ),
               InkWell(
                 onHover: (val) {
@@ -83,11 +90,11 @@ class _ContactState extends State<Contact> {
                   color: onHoverGitHub == true
                       ? const Color(0xff309543)
                       : Colors.white,
-                  size: 50.0,
+                  size: 40.0,
                 ),
               ),
               const SizedBox(
-                width: 25.0,
+                width: 30.0,
               ),
               InkWell(
                 onHover: (val) {
@@ -108,11 +115,11 @@ class _ContactState extends State<Contact> {
                   color: onHoverInsta == true
                       ? const Color(0xff309543)
                       : Colors.white,
-                  size: 50.0,
+                  size: 40.0,
                 ),
               ),
               const SizedBox(
-                width: 25.0,
+                width: 30.0,
               ),
               InkWell(
                 onHover: (val) {
@@ -132,16 +139,16 @@ class _ContactState extends State<Contact> {
                       Uri.parse('mailto:$toMailId?subject=$subject&body=$body');
                   launchUrl(url);
                 },
-                child: Icon(
-                  Icons.mail,
+                child: FaIcon(
+                  FontAwesomeIcons.envelope,
                   color: onHoverGMail == true
                       ? const Color(0xff309543)
                       : Colors.white,
-                  size: 50.0,
+                  size: 40.0,
                 ),
               ),
               const SizedBox(
-                width: 25.0,
+                width: 30.0,
               ),
             ],
           ),

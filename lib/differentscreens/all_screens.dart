@@ -4,6 +4,7 @@ import 'package:myportfolio/components/about_me.dart';
 import 'package:myportfolio/components/my_projects.dart';
 import 'package:myportfolio/components/skills.dart';
 import '../components/contact.dart';
+import 'package:shimmer/shimmer.dart';
 
 class AllScreens extends StatefulWidget {
   const AllScreens({Key? key}) : super(key: key);
@@ -157,12 +158,16 @@ class _AllScreensState extends State<AllScreens> {
                         //color: Colors.grey,
                         child: Align(
                             alignment: Alignment.bottomLeft,
-                            child: Text(
-                              "Mohammed Idrees",
-                              style: GoogleFonts.robotoMono(
-                                  color: Colors.white,
-                                  fontSize: 24.0,
-                                  fontWeight: FontWeight.w500),
+                            child: Shimmer.fromColors(
+                              baseColor: Colors.white,
+                              highlightColor: const Color(0xff309543),
+                              child: Text(
+                                "Mohammed Idrees",
+                                style: GoogleFonts.robotoMono(
+                                    color: Colors.white,
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
                             )),
                       ),
                     ),

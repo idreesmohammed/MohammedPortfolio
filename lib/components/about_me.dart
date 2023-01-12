@@ -72,7 +72,7 @@ class AboutMe extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(left: 10.0),
                             child: Text(
-                              "I'm a software engineer specialized in front end development for hybrid applications using Flutter.\nI love to build products that can be used bt millions of people.",
+                              "I'm a software engineer specialized in front end development for hybrid applications using Flutter.\nI love to build products that can be used by millions of people.",
                               style: GoogleFonts.robotoMono(
                                 color: Colors.white,
                                 fontSize: 16.0,

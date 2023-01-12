@@ -45,9 +45,9 @@ class SkillCardForImage extends StatelessWidget {
           width: !Utils.isMobile(context) ? Utils.mdqw(context) / 6.8 : 77,
           child: Padding(
             padding: Utils.isMobile(context)
-                ? const EdgeInsets.all(8.0)
+                ? const EdgeInsets.all(9.0)
                 : const EdgeInsets.all(30.0),
-            child: SvgPicture.network(url),
+            child: Image.asset(url),
           ),
         ),
       ),

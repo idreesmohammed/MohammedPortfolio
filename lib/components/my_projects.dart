@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flip_card/flip_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../utils.dart';
@@ -13,6 +13,7 @@ class MyProjects extends StatefulWidget {
 }
 
 class _MyProjectsState extends State<MyProjects> {
+  GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
   bool onHover = false;
   bool onHover2 = false;
   bool onHover3 = false;
