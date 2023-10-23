@@ -1,0 +1,29 @@
+class Constants {
+  static const String name = 'Mohammed Idrees';
+  static const String frontEnd = 'Front-End Developer\nFlutter|Swift UI';
+  static const String frontEndDeveloper = 'Front-End Developer';
+  static const String contactTitle = 'Contact';
+  static const String email = 'mohammedidrees21@gmail.com';
+  static const String emailTitle = 'email';
+  static const String linkedInTitle = 'Linked In';
+  static const String gitHubTitle = 'Github';
+  static const String skills = 'Skills';
+  static const String flutter = 'Flutter';
+  static const String dart = 'dart';
+  static const String swiftUI = 'Swift UI';
+  static const String fireBase = 'Firebase';
+  static const String bloc = 'Bloc';
+  static const String getX = 'GetX';
+  static const String provider = 'Provider';
+  static const String hive = 'Hive';
+  static const String github = 'GitHub';
+  static const String mvc = 'MVC';
+  static const String jira = 'Jira';
+  static const String azureDevOps = 'Azure DevOps';
+  static const String mexNumber = '+52 33 1270 6794';
+  static const String indianNumber = '+91 8610679347';
+  static const String knowledge = 'Knowledge';
+  static const String downloadMyResume = 'Download My Resume';
+  static const String resumeUrl =
+      'https://drive.google.com/file/d/1lSQwES0NolXgkZzRtLJGgLlXwBzkQbD4/view?usp=drivesdk';
+}

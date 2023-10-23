@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:myportfolio/components/about_me.dart';
+import 'package:myportfolio/components/customdrawer.dart';
 import 'package:myportfolio/components/my_projects.dart';
 import 'package:myportfolio/components/skills.dart';
 import '../components/contact.dart';
@@ -19,14 +20,19 @@ class _AllScreensState extends State<AllScreens> {
   bool isHover = false;
   bool isHoverProject = false;
   bool isHoverContacts = false;
+  bool isHoverMoreAboutMe = false;
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      drawer: const Drawer(
+        child: CustomDrawer(),
+      ),
       key: _scaffoldKey,
       backgroundColor: const Color(0xff021227),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         bottomOpacity: 0.0,
         elevation: 0.0,
         backgroundColor: const Color(0xff021227),
@@ -36,12 +42,13 @@ class _AllScreensState extends State<AllScreens> {
             height: height * 0.02,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // spaceContainer(height, width),
               SizedBox(
                 height: height,
                 width: width,
-                //color: Colors.blue,
                 child: Column(
                   children: [
                     Padding(
@@ -51,6 +58,31 @@ class _AllScreensState extends State<AllScreens> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
+                          Builder(
+                            builder: (buildContext) => InkWell(
+                              child: Text(
+                                "More About Me",
+                                style: GoogleFonts.robotoMono(
+                                    fontSize: 18.0,
+                                    decoration: TextDecoration.underline,
+                                    color: isHoverMoreAboutMe == true
+                                        ? const Color(0xff309543)
+                                        : Colors.white,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              onTap: () {
+                                Scaffold.of(buildContext).openDrawer();
+                              },
+                              onHover: (val) {
+                                setState(() {
+                                  isHoverMoreAboutMe = val;
+                                  isHover = false;
+                                  isHoverProject = false;
+                                  isHoverContacts = false;
+                                });
+                              },
+                            ),
+                          ),
                           InkWell(
                             child: Text(
                               "Skills",
@@ -74,6 +106,7 @@ class _AllScreensState extends State<AllScreens> {
                                 isHover = val;
                                 isHoverProject = false;
                                 isHoverContacts = false;
+                                isHoverMoreAboutMe = false;
                               });
                             },
                           ),
@@ -90,6 +123,7 @@ class _AllScreensState extends State<AllScreens> {
                                 isHover = false;
                                 isHoverProject = val;
                                 isHoverContacts = false;
+                                isHoverMoreAboutMe = false;
                               });
                             },
                             child: Text(
@@ -116,6 +150,7 @@ class _AllScreensState extends State<AllScreens> {
                                 isHover = false;
                                 isHoverProject = false;
                                 isHoverContacts = val;
+                                isHoverMoreAboutMe = false;
                               });
                             },
                             child: Text(
@@ -204,8 +239,8 @@ class _AllScreensState extends State<AllScreens> {
                   ScrollConfiguration.of(context).copyWith(scrollbars: false),
               child: SingleChildScrollView(
                 controller: myScrollController,
-                child: Column(
-                  children: const [
+                child: const Column(
+                  children: [
                     AboutMe(),
                     Skills(),
                     SizedBox(

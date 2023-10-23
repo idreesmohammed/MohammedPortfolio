@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myportfolio/utils.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SkillCard extends StatelessWidget {
   final String url;
